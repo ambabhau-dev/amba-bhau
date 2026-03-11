@@ -668,33 +668,55 @@ RULES:
 - Keep answers concise but complete. Use bullet points where helpful.
 - Always end with "– अंबा भाऊ 🪔" or "– Amba Bhau 🪔"`;
 
-let history = [];
-let busy = false;
+// --- NEW WHATSAPP SUPPORT LOGIC ---
+const MY_WHATSAPP_NUMBER = "91XXXXXXXXXX"; // <-- REPLACE WITH YOUR REAL NUMBER
 
 async function sendMsg() {
   const inp = document.getElementById('chat-in');
   const txt = inp.value.trim();
-  if (!txt || busy) return;
-  inp.value = '';
+  if (!txt) return;
+
+  // 1. Show user's message in the chat
   addBubble('user', txt);
-  history.push({role:'user', content:txt});
+  inp.value = '';
   document.getElementById('qr-bar').style.display = 'none';
-  showTyping(); busy = true;
-  document.getElementById('send-btn').disabled = true;
-  try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({
-        model:'claude-sonnet-4-20250514',
-        max_tokens:1000,
-        system: SYSTEM,
-        messages: history
-      })
-    });
-    const data = await res.json();
-    const reply = data.content?.[0]?.text || (lang==='mr'?'माफ करा, उत्तर मिळाले नाही.':'Sorry, could not get a response.');
+
+  // 2. Show Amba Bhau's response
+  showTyping();
+  setTimeout(() => {
     removeTyping();
+    const reply = lang === 'mr' 
+      ? "मी तुम्हाला व्हॉट्सॲपवर घेऊन जात आहे, जिथे मी तुम्हाला वैयक्तिकरित्या मदत करू शकेन! 🙏" 
+      : "I am taking you to WhatsApp so I can help you personally! 🙏";
+    addBubble('bot', reply);
+    
+    // 3. Open WhatsApp after a short delay
+    const encodedText = encodeURIComponent(`नमस्ते अंबा भाऊ, मला SIR 2026 बद्दल मदत हवी आहे: ${txt}`);
+    setTimeout(() => {
+        window.open(`https://wa.me/${MY_WHATSAPP_NUMBER}?text=${encodedText}`, '_blank');
+    }, 1500);
+  }, 1000);
+}
+
+function addBubble(role, text) {
+  const c = document.getElementById('chat-msgs');
+  const d = document.createElement('div');
+  d.className = 'msg ' + role;
+  d.innerHTML = `<div class="msg-avatar">${role==='bot'?'🪔':'👤'}</div><div class="msg-bubble">${text.replace(/\n/g,'<br>')}</div>`;
+  c.appendChild(d);
+  c.scrollTop = c.scrollHeight;
+}
+
+function showTyping() {
+  const c = document.getElementById('chat-msgs');
+  const d = document.createElement('div');
+  d.className = 'msg bot'; d.id = 'typing';
+  d.innerHTML = `<div class="msg-avatar">🪔</div><div class="msg-bubble"><div class="typing-dots"><span></span><span></span><span></span></div></div>`;
+  c.appendChild(d);
+  c.scrollTop = c.scrollHeight;
+}
+
+function removeTyping() { document.getElementById('typing')?.remove(); }
     addBubble('bot', reply);
     history.push({role:'assistant', content:reply});
   } catch(e) {
