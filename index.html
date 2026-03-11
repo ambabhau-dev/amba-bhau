@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अंबा भाऊ | Amba Bhau – SIR 2026 Amravati</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi:ital@0;1&family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron: #E8671A;
+    --saffron-light: #F5A04A;
+    --saffron-pale: #FEF3EA;
+    --green: #1A7A3E;
+    --green-light: #2BAB58;
+    --green-pale: #EAF7EE;
+    --cream: #FDF8F2;
+    --warm-brown: #5C3D1E;
+    --gold: #C9880A;
+    --gold-light: #F2C94C;
+    --text-dark: #2C1810;
+    --text-mid: #5A3D28;
+    --text-light: #8B6B52;
+    --white: #FFFFFF;
+    --shadow: 0 4px 24px rgba(92,61,30,0.10);
+    --shadow-lg: 0 8px 40px rgba(92,61,30,0.16);
+    --radius: 18px;
+    --radius-sm: 10px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Baloo 2', sans-serif; background: var(--cream); color: var(--text-dark); min-height: 100vh; overflow-x: hidden; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--saffron-pale); }
+  ::-webkit-scrollbar-thumb { background: var(--saffron); border-radius: 3px; }
+
+  /* HEADER */
+  header { background: linear-gradient(135deg, var(--saffron) 0%, #D45A10 60%, var(--warm-brown) 100%); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(232,103,26,0.35); }
+  .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; gap: 16px; }
+  .logo-block { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+  .logo-icon { width: 54px; height: 54px; background: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; box-shadow: 0 2px 12px rgba(0,0,0,0.18); flex-shrink: 0; }
+  .logo-text h1 { font-family: 'Tiro Devanagari Marathi', serif; font-size: 1.45rem; color: var(--white); line-height: 1.1; text-shadow: 0 1px 4px rgba(0,0,0,0.2); }
+  .logo-text p { font-size: 0.72rem; color: rgba(255,255,255,0.85); letter-spacing: 0.5px; margin-top: 2px; }
+  .lang-toggle { display: flex; background: rgba(255,255,255,0.15); border-radius: 30px; padding: 3px; gap: 2px; flex-shrink: 0; }
+  .lang-btn { padding: 6px 16px; border: none; border-radius: 26px; font-family: 'Baloo 2', sans-serif; font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: all 0.25s; color: rgba(255,255,255,0.8); background: transparent; }
+  .lang-btn.active { background: var(--white); color: var(--saffron); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+
+  /* NAV */
+  nav { background: var(--white); border-bottom: 2px solid var(--saffron-pale); box-shadow: 0 2px 10px rgba(232,103,26,0.08); }
+  .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; overflow-x: auto; scrollbar-width: none; padding: 0 12px; }
+  .nav-inner::-webkit-scrollbar { display: none; }
+  .nav-btn { padding: 13px 18px; border: none; background: transparent; font-family: 'Baloo 2', sans-serif; font-size: 0.86rem; font-weight: 600; color: var(--text-mid); cursor: pointer; white-space: nowrap; border-bottom: 3px solid transparent; transition: all 0.2s; }
+  .nav-btn:hover { color: var(--saffron); }
+  .nav-btn.active { color: var(--saffron); border-bottom-color: var(--saffron); background: var(--saffron-pale); }
+
+  /* HERO */
+  .hero { background: linear-gradient(160deg, var(--saffron-pale) 0%, var(--cream) 60%, var(--green-pale) 100%); padding: 60px 24px 44px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content:''; position:absolute; top:-60px; right:-60px; width:300px; height:300px; background:radial-gradient(circle, rgba(232,103,26,0.12) 0%, transparent 70%); pointer-events:none; }
+  .hero::after { content:''; position:absolute; bottom:-40px; left:-40px; width:240px; height:240px; background:radial-gradient(circle, rgba(26,122,62,0.10) 0%, transparent 70%); pointer-events:none; }
+  .hero-badge { display:inline-flex; align-items:center; gap:8px; background:var(--white); border:2px solid var(--saffron-light); color:var(--saffron); font-size:0.8rem; font-weight:700; padding:6px 18px; border-radius:30px; margin-bottom:20px; box-shadow:var(--shadow); animation:fadeDown 0.6s ease; }
+  .hero h2 { font-family:'Tiro Devanagari Marathi',serif; font-size:clamp(1.8rem,5vw,3rem); color:var(--warm-brown); line-height:1.2; margin-bottom:12px; animation:fadeUp 0.7s ease; }
+  .hero h2 span { color:var(--saffron); }
+  .hero p { font-size:1rem; color:var(--text-mid); max-width:580px; margin:0 auto 32px; line-height:1.7; animation:fadeUp 0.8s ease; }
+  .hero-cards { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; animation:fadeUp 0.9s ease; }
+  .hero-card { background:var(--white); border-radius:var(--radius); padding:18px 20px; box-shadow:var(--shadow); border:1.5px solid rgba(232,103,26,0.12); cursor:pointer; transition:all 0.25s; text-align:center; min-width:120px; position:relative; overflow:hidden; }
+  .hero-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, var(--saffron), var(--gold-light)); }
+  .hero-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); border-color:var(--saffron-light); }
+  .hero-card .card-icon { font-size:1.8rem; margin-bottom:8px; }
+  .hero-card .card-label { font-size:0.8rem; font-weight:700; color:var(--text-mid); line-height:1.3; }
+
+  /* MAIN */
+  main { max-width: 1200px; margin: 0 auto; padding: 32px 24px 80px; }
+  .section { display:none; animation:fadeIn 0.4s ease; }
+  .section.active { display:block; }
+
+  @keyframes fadeIn { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+  @keyframes fadeDown { from{opacity:0;transform:translateY(-10px)} to{opacity:1;transform:translateY(0)} }
+
+  .section-header { display:flex; align-items:center; gap:14px; margin-bottom:28px; padding-bottom:16px; border-bottom:2px solid var(--saffron-pale); }
+  .section-icon { width:52px; height:52px; background:linear-gradient(135deg,var(--saffron),var(--saffron-light)); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:1.6rem; box-shadow:0 4px 14px rgba(232,103,26,0.25); flex-shrink:0; }
+  .section-header-text h3 { font-family:'Tiro Devanagari Marathi',serif; font-size:1.4rem; color:var(--warm-brown); }
+  .section-header-text p { font-size:0.87rem; color:var(--text-light); margin-top:2px; }
+
+  /* FORMS & INPUTS */
+  .card-box { background:var(--white); border-radius:var(--radius); padding:26px; box-shadow:var(--shadow); border:1.5px solid var(--saffron-pale); margin-bottom:20px; }
+  .card-box h4 { font-size:0.98rem; font-weight:700; color:var(--warm-brown); margin-bottom:18px; display:flex; align-items:center; gap:8px; }
+  .form-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:14px; margin-bottom:18px; }
+  .form-group label { display:block; font-size:0.8rem; font-weight:700; color:var(--text-mid); margin-bottom:6px; letter-spacing:0.3px; }
+  .form-group select, .form-group input { width:100%; padding:11px 14px; border:1.5px solid #E8D5C4; border-radius:var(--radius-sm); font-family:'Baloo 2',sans-serif; font-size:0.9rem; color:var(--text-dark); background:var(--cream); outline:none; transition:border-color 0.2s,box-shadow 0.2s; }
+  .form-group select:focus, .form-group input:focus { border-color:var(--saffron); box-shadow:0 0 0 3px rgba(232,103,26,0.12); background:var(--white); }
+  .btn-primary { background:linear-gradient(135deg,var(--saffron),#D45A10); color:var(--white); border:none; padding:11px 28px; border-radius:30px; font-family:'Baloo 2',sans-serif; font-size:0.92rem; font-weight:700; cursor:pointer; transition:all 0.25s; box-shadow:0 4px 16px rgba(232,103,26,0.30); display:inline-flex; align-items:center; gap:8px; }
+  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 6px 22px rgba(232,103,26,0.40); }
+  .btn-secondary { background:var(--white); color:var(--saffron); border:2px solid var(--saffron); padding:9px 22px; border-radius:30px; font-family:'Baloo 2',sans-serif; font-size:0.86rem; font-weight:700; cursor:pointer; transition:all 0.2s; }
+  .btn-secondary:hover { background:var(--saffron-pale); }
+
+
+  /* NOTE BOX */
+  .note-box { background:linear-gradient(135deg,#FFFBEB,#FEF3C7); border:1.5px solid var(--gold-light); border-radius:var(--radius-sm); padding:13px 16px; margin-top:16px; font-size:0.84rem; color:var(--warm-brown); display:flex; gap:10px; align-items:flex-start; line-height:1.6; }
+
+  /* INFO BANNER */
+  .info-banner { background:linear-gradient(135deg,var(--saffron-pale),var(--white)); border:2px solid var(--saffron-light); border-radius:var(--radius); padding:18px 22px; margin-bottom:22px; display:flex; gap:14px; align-items:flex-start; }
+  .info-banner .icon { font-size:1.8rem; flex-shrink:0; }
+  .info-banner h4 { font-size:0.98rem; font-weight:700; color:var(--saffron); margin-bottom:4px; }
+  .info-banner p { font-size:0.86rem; color:var(--text-mid); line-height:1.6; }
+
+  /* DOC TABS */
+  .doc-tabs { display:flex; gap:10px; margin-bottom:22px; flex-wrap:wrap; }
+  .doc-tab { padding:8px 18px; border-radius:30px; border:2px solid var(--saffron-pale); background:var(--white); font-family:'Baloo 2',sans-serif; font-size:0.84rem; font-weight:700; color:var(--text-mid); cursor:pointer; transition:all 0.2s; }
+  .doc-tab.active, .doc-tab:hover { background:var(--saffron); color:var(--white); border-color:var(--saffron); }
+  .doc-content { display:none; }
+  .doc-content.active { display:block; animation:fadeIn 0.3s ease; }
+  .checklist { list-style:none; display:flex; flex-direction:column; gap:10px; }
+  .checklist li { display:flex; align-items:flex-start; gap:10px; font-size:0.88rem; color:var(--text-mid); line-height:1.55; }
+  .checklist li .chk { background:var(--green-pale); color:var(--green); font-weight:800; width:20px; height:20px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.7rem; flex-shrink:0; margin-top:1px; }
+
+  /* GUIDE STEPS */
+  .form-guide-steps { display:flex; flex-direction:column; gap:18px; }
+  .guide-step { background:var(--white); border-radius:var(--radius); padding:20px 22px; box-shadow:var(--shadow); border-left:5px solid var(--saffron); display:flex; gap:16px; align-items:flex-start; transition:transform 0.2s; }
+  .guide-step:hover { transform:translateX(4px); }
+  .step-num { background:var(--saffron); color:var(--white); width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.88rem; font-weight:800; flex-shrink:0; }
+  .step-body h4 { font-size:0.97rem; font-weight:700; color:var(--warm-brown); margin-bottom:6px; }
+  .step-body p { font-size:0.87rem; color:var(--text-mid); line-height:1.6; }
+  .step-note { margin-top:7px; font-size:0.81rem; color:var(--green); font-weight:600; }
+
+  /* FAQ */
+  .faq-item { background:var(--white); border-radius:var(--radius-sm); margin-bottom:10px; box-shadow:0 2px 10px rgba(92,61,30,0.07); border:1.5px solid var(--saffron-pale); overflow:hidden; }
+  .faq-question { width:100%; text-align:left; background:none; border:none; padding:16px 20px; font-family:'Baloo 2',sans-serif; font-size:0.93rem; font-weight:700; color:var(--warm-brown); cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:12px; transition:background 0.2s; }
+  .faq-question:hover { background:var(--saffron-pale); }
+  .faq-arrow { font-size:1.1rem; transition:transform 0.3s; flex-shrink:0; color:var(--saffron); }
+  .faq-item.open .faq-arrow { transform:rotate(180deg); }
+  .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.35s ease,padding 0.3s; font-size:0.87rem; color:var(--text-mid); line-height:1.7; padding:0 20px; }
+  .faq-item.open .faq-answer { max-height:300px; padding:0 20px 16px; }
+
+  /* HELPLINE */
+  .helpline-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:14px; margin-bottom:24px; }
+  .helpline-card { background:var(--white); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow); border:1.5px solid var(--saffron-pale); display:flex; gap:14px; align-items:center; transition:all 0.2s; }
+  .helpline-card:hover { border-color:var(--saffron); transform:translateY(-3px); box-shadow:var(--shadow-lg); }
+  .helpline-icon { width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.4rem; flex-shrink:0; }
+  .helpline-icon.orange { background:var(--saffron-pale); }
+  .helpline-icon.green { background:var(--green-pale); }
+  .helpline-icon.gold { background:#FEF9C3; }
+  .helpline-info .hlabel { font-size:0.75rem; font-weight:700; color:var(--text-light); text-transform:uppercase; letter-spacing:0.5px; }
+  .helpline-info .hname { font-size:0.92rem; font-weight:700; color:var(--text-dark); margin:2px 0; }
+  .helpline-info .hnumber { font-size:1.05rem; font-weight:800; color:var(--saffron); }
+
+  /* CHAT */
+  .chat-container { background:var(--white); border-radius:var(--radius); box-shadow:var(--shadow-lg); border:1.5px solid var(--saffron-pale); overflow:hidden; display:flex; flex-direction:column; height:530px; }
+  .chat-header { background:linear-gradient(135deg,var(--saffron),#D45A10); padding:15px 20px; display:flex; align-items:center; gap:12px; }
+  .chat-avatar { width:42px; height:42px; background:var(--white); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0; box-shadow:0 2px 8px rgba(0,0,0,0.15); }
+  .chat-header-info h4 { font-size:0.98rem; font-weight:800; color:var(--white); }
+  .chat-header-info p { font-size:0.76rem; color:rgba(255,255,255,0.85); margin-top:1px; }
+  .online-dot { width:7px; height:7px; background:#4ADE80; border-radius:50%; box-shadow:0 0 6px #4ADE80; display:inline-block; margin-right:4px; }
+  .chat-messages { flex:1; overflow-y:auto; padding:18px; display:flex; flex-direction:column; gap:12px; background:var(--cream); scroll-behavior:smooth; }
+  .msg { display:flex; gap:9px; align-items:flex-end; max-width:85%; animation:fadeIn 0.3s ease; }
+  .msg.user { align-self:flex-end; flex-direction:row-reverse; }
+  .msg-avatar { width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.85rem; flex-shrink:0; }
+  .msg.bot .msg-avatar { background:linear-gradient(135deg,var(--saffron),var(--saffron-light)); color:white; }
+  .msg.user .msg-avatar { background:linear-gradient(135deg,var(--green),var(--green-light)); color:white; }
+  .msg-bubble { padding:10px 15px; border-radius:17px; font-size:0.88rem; line-height:1.6; }
+  .msg.bot .msg-bubble { background:var(--white); color:var(--text-dark); border-bottom-left-radius:4px; box-shadow:0 2px 8px rgba(92,61,30,0.10); }
+  .msg.user .msg-bubble { background:linear-gradient(135deg,var(--saffron),#D45A10); color:var(--white); border-bottom-right-radius:4px; }
+  .typing-dots { display:flex; gap:4px; align-items:center; padding:4px 2px; }
+  .typing-dots span { width:7px; height:7px; background:var(--saffron-light); border-radius:50%; animation:bounce 1.4s infinite; }
+  .typing-dots span:nth-child(2) { animation-delay:0.2s; }
+  .typing-dots span:nth-child(3) { animation-delay:0.4s; }
+  @keyframes bounce { 0%,60%,100%{transform:translateY(0);opacity:0.4} 30%{transform:translateY(-5px);opacity:1} }
+  .chat-quick-replies { display:flex; gap:8px; flex-wrap:wrap; padding:10px 18px; background:var(--white); border-top:1px solid var(--saffron-pale); }
+  .qr-btn { padding:6px 13px; background:var(--saffron-pale); border:1.5px solid var(--saffron-light); border-radius:20px; font-family:'Baloo 2',sans-serif; font-size:0.77rem; font-weight:600; color:var(--saffron); cursor:pointer; transition:all 0.2s; white-space:nowrap; }
+  .qr-btn:hover { background:var(--saffron); color:white; }
+  .chat-input-bar { display:flex; gap:10px; padding:13px 16px; background:var(--white); border-top:2px solid var(--saffron-pale); align-items:center; }
+  .chat-input { flex:1; padding:10px 17px; border:1.5px solid #E8D5C4; border-radius:30px; font-family:'Baloo 2',sans-serif; font-size:0.9rem; outline:none; background:var(--cream); color:var(--text-dark); transition:all 0.2s; }
+  .chat-input:focus { border-color:var(--saffron); box-shadow:0 0 0 3px rgba(232,103,26,0.12); background:var(--white); }
+  .send-btn { width:42px; height:42px; background:linear-gradient(135deg,var(--saffron),#D45A10); border:none; border-radius:50%; color:white; font-size:1rem; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.2s; box-shadow:0 3px 12px rgba(232,103,26,0.30); flex-shrink:0; }
+  .send-btn:hover { transform:scale(1.08); }
+  .send-btn:disabled { opacity:0.5; cursor:not-allowed; transform:none; }
+
+  /* FOOTER */
+  footer { background:var(--warm-brown); color:rgba(255,255,255,0.75); text-align:center; padding:22px; font-size:0.81rem; line-height:1.9; }
+  footer strong { color:var(--saffron-light); }
+
+  @media(max-width:640px) {
+    .header-inner { padding:10px 14px; }
+    main { padding:18px 12px 60px; }
+    .hero { padding:36px 14px 28px; }
+    .card-box { padding:16px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-block">
+      <div class="logo-icon">🪔</div>
+      <div class="logo-text">
+        <h1 id="logo-title">अंबा भाऊ</h1>
+        <p id="logo-sub">SIR 2026 · अमरावती जिल्हा · Amravati District</p>
+      </div>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('mr')" id="btn-mr">मराठी</button>
+      <button class="lang-btn" onclick="setLang('en')" id="btn-en">English</button>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <button class="nav-btn active" onclick="goTo('home')" id="nav-home">🏠 मुख्यपृष्ठ</button>
+    <button class="nav-btn" onclick="goTo('docs')" id="nav-docs">📋 कागदपत्रे</button>
+    <button class="nav-btn" onclick="goTo('guide')" id="nav-guide">📝 फॉर्म मार्गदर्शन</button>
+    <button class="nav-btn" onclick="goTo('faq')" id="nav-faq">❓ प्रश्नोत्तरे</button>
+    <button class="nav-btn" onclick="goTo('helpline')" id="nav-helpline">📞 हेल्पलाईन</button>
+    <button class="nav-btn" onclick="goTo('chat')" id="nav-chat">💬 अंबा भाऊशी बोला</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div id="hero" class="hero">
+  <div class="hero-badge" id="hero-badge">🗳️ विशेष गहन पुनरीक्षण 2026</div>
+  <h2 id="hero-title">नमस्कार! मी <span>अंबा भाऊ</span> 👋</h2>
+  <p id="hero-desc">अमरावती जिल्ह्यातील मतदार यादी पुनरीक्षण (SIR 2026) साठी तुमचा विश्वासू मार्गदर्शक. मतदार नोंदणी, BLO माहिती, आणि फॉर्म भरण्यात मी तुम्हाला मदत करेन.</p>
+  <div class="hero-cards">
+    <div class="hero-card" onclick="goTo('docs')"><div class="card-icon">📋</div><div class="card-label" id="hc2">कागदपत्रे</div></div>
+    <div class="hero-card" onclick="goTo('guide')"><div class="card-icon">📝</div><div class="card-label" id="hc3">फॉर्म मार्गदर्शन</div></div>
+    <div class="hero-card" onclick="goTo('faq')"><div class="card-icon">❓</div><div class="card-label" id="hc4">प्रश्नोत्तरे</div></div>
+    <div class="hero-card" onclick="goTo('helpline')"><div class="card-icon">📞</div><div class="card-label" id="hc5">हेल्पलाईन</div></div>
+    <div class="hero-card" onclick="goTo('chat')"><div class="card-icon">💬</div><div class="card-label" id="hc6">बोला अंबा भाऊशी</div></div>
+  </div>
+</div>
+
+<main>
+
+<!-- HOME -->
+<div class="section active" id="section-home">
+  <div class="info-banner">
+    <div class="icon">📢</div>
+    <div>
+      <h4 id="ib-h">SIR 2026 बद्दल महत्त्वाची माहिती</h4>
+      <p id="ib-p">विशेष गहन पुनरीक्षण (SIR) 2026 अंतर्गत अमरावती जिल्ह्यात मतदार यादी अद्ययावत केली जात आहे. BLO अधिकारी घरोघरी येऊन गणना फॉर्म भरतील. घरात कोणीतरी उपस्थित असणे आवश्यक आहे. योग्य कागदपत्रे तयार ठेवा.</p>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px">
+    <div class="card-box" style="border-top:4px solid var(--green);cursor:pointer" onclick="goTo('guide')">
+      <h4>📝 <span id="hm2">गणना फॉर्म कसा भरावा</span></h4>
+      <p style="font-size:0.86rem;color:var(--text-mid);line-height:1.6" id="hm2d">BLO देणारा गणना फॉर्म चरण-दर-चरण कसा भरायचा ते येथे पहा.</p>
+      <div style="margin-top:14px"><button class="btn-primary" style="font-size:0.8rem;padding:8px 18px;background:linear-gradient(135deg,var(--green),var(--green-light))" id="hm2b">पहा →</button></div>
+    </div>
+    <div class="card-box" style="border-top:4px solid var(--gold);cursor:pointer" onclick="goTo('chat')">
+      <h4>💬 <span id="hm3">अंबा भाऊशी बोला</span></h4>
+      <p style="font-size:0.86rem;color:var(--text-mid);line-height:1.6" id="hm3d">मराठी किंवा इंग्रजीत प्रश्न विचारा. झटपट उत्तर मिळेल.</p>
+      <div style="margin-top:14px"><button class="btn-primary" style="font-size:0.8rem;padding:8px 18px" id="hm3b">बोला →</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- DOCUMENTS -->
+<div class="section" id="section-docs">
+  <div class="section-header">
+    <div class="section-icon">📋</div>
+    <div class="section-header-text">
+      <h3 id="doc-h">आवश्यक कागदपत्रे</h3>
+      <p id="doc-sh">SIR 2026 साठी कोणती कागदपत्रे हवीत ते येथे पहा</p>
+    </div>
+  </div>
+  <div class="info-banner">
+    <div class="icon">📌</div>
+    <div>
+      <h4 id="doc-ib-h">BLO भेटीपूर्वी तयार ठेवा</h4>
+      <p id="doc-ib-p">खालील कागदपत्रांची मूळ प्रत व साक्षांकित छायाप्रत दोन्ही तयार ठेवा.</p>
+    </div>
+  </div>
+  <div class="doc-tabs">
+    <button class="doc-tab active" onclick="showDocTab('new',this)">🆕 <span id="dt1">नवीन नोंदणी</span></button>
+    <button class="doc-tab" onclick="showDocTab('corr',this)">✏️ <span id="dt2">दुरुस्ती</span></button>
+    <button class="doc-tab" onclick="showDocTab('del',this)">🗑️ <span id="dt3">नाव काढणे</span></button>
+    <button class="doc-tab" onclick="showDocTab('shift',this)">🏠 <span id="dt4">पत्ता बदल</span></button>
+  </div>
+  <div class="doc-content active" id="doc-new">
+    <div class="card-box">
+      <h4>📄 <span id="dn-h">नवीन मतदार नोंदणी – Form 6</span></h4>
+      <ul class="checklist">
+        <li><span class="chk">✓</span><span id="dn1">वयाचा पुरावा – जन्म दाखला, शाळेचे प्रमाणपत्र, पासपोर्ट किंवा आधार कार्ड (Age proof: Birth certificate / School leaving cert. / Passport / Aadhaar)</span></li>
+        <li><span class="chk">✓</span><span id="dn2">पत्त्याचा पुरावा – आधार कार्ड, रेशन कार्ड, वीज बिल, पाणी बिल किंवा बँक पासबुक (Address proof: Aadhaar / Ration card / Electricity bill / Water bill / Bank passbook)</span></li>
+        <li><span class="chk">✓</span><span id="dn3">पासपोर्ट आकाराचे 2 फोटो (2 recent passport-size photographs)</span></li>
+        <li><span class="chk">✓</span><span id="dn4">मोबाईल क्रमांक – OTP व SMS सूचनांसाठी (Mobile number for OTP)</span></li>
+        <li><span class="chk">✓</span><span id="dn5">आधार कार्ड – ऐच्छिक परंतु उपयुक्त (Aadhaar Card – optional but recommended)</span></li>
+      </ul>
+      <div class="note-box">⚠️ <span id="dn-note">1 जानेवारी 2026 रोजी वय 18 वर्षे किंवा त्याहून अधिक असणे आवश्यक आहे.</span></div>
+    </div>
+  </div>
+  <div class="doc-content" id="doc-corr">
+    <div class="card-box">
+      <h4>✏️ <span id="dc-h">नाव / तपशील दुरुस्ती – Form 8</span></h4>
+      <ul class="checklist">
+        <li><span class="chk">✓</span><span id="dc1">विद्यमान मतदार ओळखपत्र / Current Voter ID Card (EPIC)</span></li>
+        <li><span class="chk">✓</span><span id="dc2">दुरुस्तीचा पुरावा – नावासाठी शाळा प्रमाणपत्र किंवा जन्मतारखेसाठी आधार (Proof for correction: School cert. for name / Aadhaar for DOB)</span></li>
+        <li><span class="chk">✓</span><span id="dc3">सध्याचा मतदार यादीतील अनुक्रमांक (Serial number in current electoral roll)</span></li>
+        <li><span class="chk">✓</span><span id="dc4">स्वयंसाक्षांकित छायाप्रत (Self-attested copy of proof)</span></li>
+      </ul>
+      <div class="note-box">⚠️ <span id="dc-note">दुरुस्ती फक्त नोंदणीकृत मतदारांसाठी लागू आहे.</span></div>
+    </div>
+  </div>
+  <div class="doc-content" id="doc-del">
+    <div class="card-box">
+      <h4>🗑️ <span id="dd-h">नाव वगळणे – Form 7</span></h4>
+      <ul class="checklist">
+        <li><span class="chk">✓</span><span id="dd1">मृत्यू प्रमाणपत्र – व्यक्ती मृत असल्यास (Death certificate – if deceased)</span></li>
+        <li><span class="chk">✓</span><span id="dd2">स्थलांतर पुरावा – व्यक्ती कायमची गेल्यास (Relocation proof – if permanently relocated)</span></li>
+        <li><span class="chk">✓</span><span id="dd3">हरकत करणाऱ्याचे मतदार ओळखपत्र (Objector's own Voter ID)</span></li>
+        <li><span class="chk">✓</span><span id="dd4">भाग क्रमांक व नाव वगळण्याच्या व्यक्तीचा अनुक्रमांक (Part no. and serial no. of person to be deleted)</span></li>
+      </ul>
+      <div class="note-box">⚠️ <span id="dd-note">खोटी हरकत दाखल केल्यास कायदेशीर कारवाई होऊ शकते.</span></div>
+    </div>
+  </div>
+  <div class="doc-content" id="doc-shift">
+    <div class="card-box">
+      <h4>🏠 <span id="ds-h">पत्ता बदल (त्याच मतदारसंघात) – Form 8A</span></h4>
+      <ul class="checklist">
+        <li><span class="chk">✓</span><span id="ds1">विद्यमान मतदार ओळखपत्र / Current Voter ID (EPIC)</span></li>
+        <li><span class="chk">✓</span><span id="ds2">नवीन पत्त्याचा पुरावा – आधार, रेशन कार्ड किंवा वीज बिल (New address proof: Aadhaar / Ration card / Electricity bill)</span></li>
+        <li><span class="chk">✓</span><span id="ds3">जुन्या पत्त्यातील भाग क्रमांक व अनुक्रमांक (Part no. and serial no. at old address)</span></li>
+      </ul>
+      <div class="note-box">⚠️ <span id="ds-note">वेगळ्या मतदारसंघात बदलल्यास Form 6 भरावा लागेल.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- FORM GUIDE -->
+<div class="section" id="section-guide">
+  <div class="section-header">
+    <div class="section-icon">📝</div>
+    <div class="section-header-text">
+      <h3 id="fg-h">गणना फॉर्म कसा भरावा</h3>
+      <p id="fg-sh">BLO देणारा घर-भेट गणना फॉर्म (Household Enumeration Form) भरण्यासाठी चरण-दर-चरण मार्गदर्शन</p>
+    </div>
+  </div>
+  <div class="info-banner">
+    <div class="icon">🏠</div>
+    <div>
+      <h4 id="fg-ib-h">गणना फॉर्म म्हणजे काय?</h4>
+      <p id="fg-ib-p">SIR 2026 दरम्यान BLO अधिकारी प्रत्येक घरी येऊन गणना फॉर्म देतात. या फॉर्ममध्ये घरातील सर्व रहिवाशांची माहिती भरायची असते. हा फॉर्म मतदार यादी अद्ययावत करण्यासाठी वापरला जातो.</p>
+    </div>
+  </div>
+  <div class="form-guide-steps">
+    <div class="guide-step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h4 id="s1h">घराचा पत्ता व भाग क्रमांक तपासा</h4>
+        <p id="s1p">फॉर्मच्या वरच्या भागात विधानसभा क्षेत्र, भाग क्रमांक, बूथ क्रमांक आणि पूर्ण पत्ता छापलेला असेल. हे तपशील बरोबर आहेत का ते तपासा. चुकीचे असल्यास BLO ला ताबडतोब सांगा.</p>
+        <p class="step-note" id="s1n">✅ विधानसभा नाव, भाग क्रमांक व पत्ता बरोबर असल्याची खात्री करा.</p>
+      </div>
+    </div>
+    <div class="guide-step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h4 id="s2h">घरातील सदस्यांची माहिती भरा</h4>
+        <p id="s2p">प्रत्येक रहिवाशाचे पूर्ण नाव (आधार प्रमाणे), वय, जन्मतारीख, लिंग, कुटुंब प्रमुखाशी नातेसंबंध, मोबाईल क्रमांक आणि EPIC (मतदार ओळखपत्र) क्रमांक लिहा.</p>
+        <p class="step-note" id="s2n">📌 नाव आधार कार्डावर जसे आहे तसेच लिहा – चुकीचे लिहिल्यास नंतर दुरुस्ती करावी लागेल.</p>
+      </div>
+    </div>
+    <div class="guide-step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h4 id="s3h">नवीन पात्र सदस्यांची नोंद करा</h4>
+        <p id="s3p">18 वर्षे पूर्ण झालेले परंतु अजून मतदार यादीत नाव नसलेले सदस्य असल्यास त्यांची माहिती नोंदवा. BLO त्यांना Form 6 देतील.</p>
+        <p class="step-note" id="s3n">✅ 1 जानेवारी 2026 पूर्वी 18 वर्षे पूर्ण असणे आवश्यक आहे.</p>
+      </div>
+    </div>
+    <div class="guide-step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <h4 id="s4h">मृत व स्थलांतरित सदस्यांची माहिती द्या</h4>
+        <p id="s4p">यादीत असलेले परंतु मृत झालेले किंवा कायमचे इतर ठिकाणी गेलेले सदस्य असल्यास BLO ला सांगा. ते Form 7 भरतील (नाव वगळण्यासाठी).</p>
+        <p class="step-note" id="s4n">⚠️ खोटी माहिती देणे हा कायदेशीर गुन्हा आहे.</p>
+      </div>
+    </div>
+    <div class="guide-step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <h4 id="s5h">फोटो व कागदपत्रे सादर करा</h4>
+        <p id="s5p">नवीन नोंदणीसाठी 2 पासपोर्ट आकाराचे फोटो आणि आधार कार्डाची साक्षांकित छायाप्रत द्या. BLO मूळ कागदपत्रे तपासून नोंद करतील.</p>
+        <p class="step-note" id="s5n">📷 फोटो स्पष्ट, रंगीत, 35mm × 45mm आकाराचे असावेत.</p>
+      </div>
+    </div>
+    <div class="guide-step">
+      <div class="step-num">6</div>
+      <div class="step-body">
+        <h4 id="s6h">फॉर्मवर सही करा व पोच घ्या</h4>
+        <p id="s6p">फॉर्म भरल्यानंतर कुटुंब प्रमुखाने सही किंवा अंगठा द्यावा. BLO कडून पोचपावती (Acknowledgement Slip) घेणे अनिवार्य आहे. त्यावरील क्रमांक tracking साठी उपयुक्त आहे.</p>
+        <p class="step-note" id="s6n">🧾 पोचपावती सुरक्षित ठेवा – भविष्यात उपयोगी येईल.</p>
+      </div>
+    </div>
+    <div class="guide-step" style="border-left-color:var(--green)">
+      <div class="step-num" style="background:var(--green)">7</div>
+      <div class="step-body">
+        <h4 id="s7h">ऑनलाईन स्थिती तपासा</h4>
+        <p id="s7p">अर्ज केल्यानंतर voters.eci.gov.in किंवा Voter Helpline App वर तुमचा अर्ज क्रमांक टाकून स्थिती तपासू शकता. मोबाईलवर SMS येईल.</p>
+        <p class="step-note" id="s7n">📱 Voter Helpline App: Play Store / App Store वर उपलब्ध</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="section" id="section-faq">
+  <div class="section-header">
+    <div class="section-icon">❓</div>
+    <div class="section-header-text">
+      <h3 id="faq-h">वारंवार विचारले जाणारे प्रश्न</h3>
+      <p id="faq-sh">SIR 2026 बद्दल सामान्य प्रश्न व उत्तरे</p>
+    </div>
+  </div>
+  <div id="faq-container"></div>
+</div>
+
+<!-- HELPLINE -->
+<div class="section" id="section-helpline">
+  <div class="section-header">
+    <div class="section-icon">📞</div>
+    <div class="section-header-text">
+      <h3 id="hl-h">हेल्पलाईन व संपर्क</h3>
+      <p id="hl-sh">मदतीसाठी या क्रमांकांवर संपर्क करा</p>
+    </div>
+  </div>
+  <div class="helpline-grid">
+    <div class="helpline-card">
+      <div class="helpline-icon orange">📞</div>
+      <div class="helpline-info">
+        <div class="hlabel">National Voter Helpline</div>
+        <div class="hname">Election Commission of India</div>
+        <div class="hnumber">1950</div>
+      </div>
+    </div>
+    <div class="helpline-card">
+      <div class="helpline-icon green">🏛️</div>
+      <div class="helpline-info">
+        <div class="hlabel" id="hl-deo">जिल्हा निवडणूक कार्यालय</div>
+        <div class="hname">District Election Office, Amravati</div>
+        <div class="hnumber">0721 – 2662108</div>
+      </div>
+    </div>
+    <div class="helpline-card">
+      <div class="helpline-icon gold">🌐</div>
+      <div class="helpline-info">
+        <div class="hlabel">Online Portal</div>
+        <div class="hname">Voter Registration & Status</div>
+        <div class="hnumber" style="font-size:0.82rem;color:var(--green)">voters.eci.gov.in</div>
+      </div>
+    </div>
+    <div class="helpline-card">
+      <div class="helpline-icon orange">📱</div>
+      <div class="helpline-info">
+        <div class="hlabel">Mobile App</div>
+        <div class="hname">Voter Helpline App</div>
+        <div class="hnumber" style="font-size:0.82rem;color:var(--green)">Play Store / App Store</div>
+      </div>
+    </div>
+    <div class="helpline-card">
+      <div class="helpline-icon green">🖥️</div>
+      <div class="helpline-info">
+        <div class="hlabel">Maharashtra CEO</div>
+        <div class="hname">Chief Electoral Officer, MH</div>
+        <div class="hnumber" style="font-size:0.82rem;color:var(--green)">ceo.maharashtra.gov.in</div>
+      </div>
+    </div>
+    <div class="helpline-card">
+      <div class="helpline-icon gold">✉️</div>
+      <div class="helpline-info">
+        <div class="hlabel">Email</div>
+        <div class="hname">Collector Office, Amravati</div>
+        <div class="hnumber" style="font-size:0.76rem">collector.amravati@maharashtra.gov.in</div>
+      </div>
+    </div>
+  </div>
+  <div class="note-box">🕐 <span id="hl-note">हेल्पलाईन 1950 सोमवार–शनिवार, सकाळी 10 – सायंकाळी 5 वाजेपर्यंत उपलब्ध आहे. | Helpline 1950 is available Mon–Sat, 10 AM – 5 PM.</span></div>
+</div>
+
+<!-- CHAT -->
+<div class="section" id="section-chat">
+  <div class="section-header">
+    <div class="section-icon">💬</div>
+    <div class="section-header-text">
+      <h3 id="ch-h">अंबा भाऊशी बोला</h3>
+      <p id="ch-sh">मराठी किंवा इंग्रजीत प्रश्न विचारा – झटपट उत्तर मिळेल</p>
+    </div>
+  </div>
+  <div class="chat-container">
+    <div class="chat-header">
+      <div class="chat-avatar">🪔</div>
+      <div class="chat-header-info">
+        <h4>अंबा भाऊ</h4>
+        <p><span class="online-dot"></span>ऑनलाईन | SIR 2026 सहाय्यक · अमरावती</p>
+      </div>
+    </div>
+    <div class="chat-messages" id="chat-msgs">
+      <div class="msg bot">
+        <div class="msg-avatar">🪔</div>
+        <div class="msg-bubble">नमस्कार! मी अंबा भाऊ – अमरावती जिल्ह्याचा SIR 2026 सहाय्यक आहे. 🙏<br><br>मतदार नोंदणी, BLO माहिती, कागदपत्रे किंवा फॉर्म भरण्याबद्दल काहीही विचारा. मराठी किंवा English – दोन्ही चालतात!</div>
+      </div>
+    </div>
+    <div class="chat-quick-replies" id="qr-bar">
+      <button class="qr-btn" onclick="quickAsk(this)">नवीन नोंदणी कशी करावी?</button>
+      <button class="qr-btn" onclick="quickAsk(this)">कोणती कागदपत्रे लागतात?</button>
+      <button class="qr-btn" onclick="quickAsk(this)">How to fill the enumeration form?</button>
+      <button class="qr-btn" onclick="quickAsk(this)">What is SIR 2026?</button>
+    </div>
+    <div class="chat-input-bar">
+      <input class="chat-input" id="chat-in" placeholder="मराठी किंवा इंग्रजीत प्रश्न विचारा..." onkeydown="if(event.key==='Enter')sendMsg()">
+      <button class="send-btn" id="send-btn" onclick="sendMsg()">➤</button>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <strong>अंबा भाऊ | Amba Bhau</strong> – SIR 2026, अमरावती जिल्हा<br>
+  निवडणूक आयोगाच्या विशेष गहन पुनरीक्षण 2026 साठी नागरिक माहिती केंद्र<br>
+  <span style="font-size:0.77rem;opacity:0.7">हे एक नागरिक माहिती पोर्टल आहे · This is a citizen information portal for Amravati District · © 2026</span>
+</footer>
+
+<script>
+// ─── LANGUAGE ───
+let lang = 'mr';
+
+const LABELS = {
+  mr: {
+    'nav-home':'🏠 मुख्यपृष्ठ','nav-docs':'📋 कागदपत्रे',
+    'nav-guide':'📝 फॉर्म मार्गदर्शन','nav-faq':'❓ प्रश्नोत्तरे',
+    'nav-helpline':'📞 हेल्पलाईन','nav-chat':'💬 अंबा भाऊशी बोला',
+    'hc2':'कागदपत्रे','hc3':'फॉर्म मार्गदर्शन',
+    'hc4':'प्रश्नोत्तरे','hc5':'हेल्पलाईन','hc6':'बोला अंबा भाऊशी',
+    'hero-badge':'🗳️ विशेष गहन पुनरीक्षण 2026',
+    'hero-title':'नमस्कार! मी <span>अंबा भाऊ</span> 👋',
+    'hero-desc':'अमरावती जिल्ह्यातील मतदार यादी पुनरीक्षण (SIR 2026) साठी तुमचा विश्वासू मार्गदर्शक. मतदार नोंदणी, कागदपत्रे, आणि फॉर्म भरण्यात मी तुम्हाला मदत करेन.',
+    'ib-h':'SIR 2026 बद्दल महत्त्वाची माहिती',
+    'ib-p':'विशेष गहन पुनरीक्षण (SIR) 2026 अंतर्गत अमरावती जिल्ह्यात मतदार यादी अद्ययावत केली जात आहे. BLO अधिकारी घरोघरी येऊन गणना फॉर्म भरतील. घरात कोणीतरी उपस्थित असणे आवश्यक आहे. योग्य कागदपत्रे तयार ठेवा.',
+    'hm2':'गणना फॉर्म कसा भरावा','hm2d':'BLO देणारा गणना फॉर्म चरण-दर-चरण कसा भरायचा ते येथे पहा.','hm2b':'पहा →',
+    'hm3':'अंबा भाऊशी बोला','hm3d':'मराठी किंवा इंग्रजीत प्रश्न विचारा. झटपट उत्तर मिळेल.','hm3b':'बोला →',
+    'doc-h':'आवश्यक कागदपत्रे','doc-sh':'SIR 2026 साठी कोणती कागदपत्रे हवीत ते येथे पहा',
+    'doc-ib-h':'BLO भेटीपूर्वी तयार ठेवा','doc-ib-p':'खालील कागदपत्रांची मूळ प्रत व साक्षांकित छायाप्रत दोन्ही तयार ठेवा.',
+    'dt1':'नवीन नोंदणी','dt2':'दुरुस्ती','dt3':'नाव काढणे','dt4':'पत्ता बदल',
+    'fg-h':'गणना फॉर्म कसा भरावा','fg-sh':'घर-भेट गणना फॉर्म भरण्यासाठी चरण-दर-चरण मार्गदर्शन',
+    'fg-ib-h':'गणना फॉर्म म्हणजे काय?','fg-ib-p':'SIR 2026 दरम्यान BLO अधिकारी प्रत्येक घरी येऊन गणना फॉर्म देतात. या फॉर्ममध्ये घरातील सर्व रहिवाशांची माहिती भरायची असते.',
+    'faq-h':'वारंवार विचारले जाणारे प्रश्न','faq-sh':'SIR 2026 बद्दल सामान्य प्रश्न व उत्तरे',
+    'hl-h':'हेल्पलाईन व संपर्क','hl-sh':'मदतीसाठी या क्रमांकांवर संपर्क करा',
+    'hl-deo':'जिल्हा निवडणूक कार्यालय',
+    'hl-note':'हेल्पलाईन 1950 सोमवार–शनिवार, सकाळी 10 – सायंकाळी 5 वाजेपर्यंत उपलब्ध आहे.',
+    'ch-h':'अंबा भाऊशी बोला','ch-sh':'मराठी किंवा इंग्रजीत प्रश्न विचारा – झटपट उत्तर मिळेल',
+    'chat-ph':'मराठी किंवा इंग्रजीत प्रश्न विचारा...'
+  },
+  en: {
+    'nav-home':'🏠 Home','nav-docs':'📋 Documents',
+    'nav-guide':'📝 Form Guide','nav-faq':'❓ FAQs',
+    'nav-helpline':'📞 Helpline','nav-chat':'💬 Chat with Amba Bhau',
+    'hc2':'Documents','hc3':'Form Guide',
+    'hc4':'FAQs','hc5':'Helpline','hc6':'Chat with Amba Bhau',
+    'hero-badge':'🗳️ Special Intensive Revision 2026',
+    'hero-title':'Hello! I\'m <span>Amba Bhau</span> 👋',
+    'hero-desc':'Your trusted guide for Voter List Revision (SIR 2026) in Amravati District. I\'ll help you with voter registration, required documents, and form filling.',
+    'ib-h':'Important Information about SIR 2026',
+    'ib-p':'Under Special Intensive Revision (SIR) 2026, the voter list in Amravati District is being updated. BLO officers will visit homes to fill the enumeration form. Ensure someone is present at home and keep documents ready.',
+    'hm2':'How to Fill Enumeration Form','hm2d':'Step-by-step guide on how to fill the enumeration form given by your BLO during their home visit.','hm2b':'View →',
+    'hm3':'Chat with Amba Bhau','hm3d':'Ask questions in Marathi or English. Get instant answers about SIR 2026.','hm3b':'Chat →',
+    'doc-h':'Required Documents','doc-sh':'Know which documents are needed for SIR 2026',
+    'doc-ib-h':'Keep Ready Before BLO Visit','doc-ib-p':'Keep both original and self-attested copies of the following documents ready.',
+    'dt1':'New Registration','dt2':'Correction','dt3':'Deletion','dt4':'Address Change',
+    'fg-h':'How to Fill the Enumeration Form','fg-sh':'Step-by-step guide for the Household Enumeration Form given by the BLO',
+    'fg-ib-h':'What is the Enumeration Form?','fg-ib-p':'During SIR 2026, the BLO officer visits each home and provides an enumeration form to record details of all residents. This form is used to update the voter list.',
+    'faq-h':'Frequently Asked Questions','faq-sh':'Common questions and answers about SIR 2026',
+    'hl-h':'Helpline & Contact','hl-sh':'Contact these numbers for assistance',
+    'hl-deo':'District Election Office',
+    'hl-note':'Helpline 1950 is available Monday–Saturday, 10 AM – 5 PM.',
+    'ch-h':'Chat with Amba Bhau','ch-sh':'Ask questions in Marathi or English – get instant answers',
+    'chat-ph':'Ask your question in Marathi or English...'
+  }
+};
+
+function setLang(l) {
+  lang = l;
+  document.getElementById('btn-mr').classList.toggle('active', l==='mr');
+  document.getElementById('btn-en').classList.toggle('active', l==='en');
+  const d = LABELS[l];
+  for (const [id, val] of Object.entries(d)) {
+    if (id === 'chat-ph') { document.getElementById('chat-in').placeholder = val; continue; }
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = val;
+  }
+  renderFAQ();
+}
+
+// ─── NAVIGATION ───
+function goTo(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById('section-' + id).classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  const nb = document.getElementById('nav-' + id);
+  if (nb) nb.classList.add('active');
+  document.getElementById('hero').style.display = (id === 'home') ? '' : 'none';
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+
+// ─── DOC TABS ───
+function showDocTab(id, btn) {
+  document.querySelectorAll('.doc-content').forEach(d => d.classList.remove('active'));
+  document.getElementById('doc-' + id).classList.add('active');
+  document.querySelectorAll('.doc-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// ─── FAQ ───
+const FAQS = {
+  mr: [
+    {q:"SIR 2026 म्हणजे काय?",a:"विशेष गहन पुनरीक्षण (SIR) 2026 म्हणजे मतदार यादी अद्ययावत करण्यासाठी भारत निवडणूक आयोगाने आयोजित केलेला एक विशेष कार्यक्रम. यात नवीन नोंदणी, दुरुस्ती आणि मृत/स्थलांतरित मतदारांची नावे काढणे समाविष्ट आहे."},
+    {q:"BLO म्हणजे कोण?",a:"BLO म्हणजे Booth Level Officer – बूथ स्तरीय अधिकारी. हा सरकारी कर्मचारी असतो जो तुमच्या बूथ क्षेत्रातील घरोघरी जाऊन मतदार यादी अद्ययावत करतो."},
+    {q:"नवीन मतदार नोंदणीसाठी किमान वय किती?",a:"1 जानेवारी 2026 रोजी 18 वर्षे किंवा त्याहून अधिक वय असणे आवश्यक आहे."},
+    {q:"BLO घरी न आल्यास काय करावे?",a:"जर BLO निश्चित वेळेत घरी आले नाहीत, तर राष्ट्रीय हेल्पलाईन 1950 वर संपर्क करा किंवा जिल्हा निवडणूक कार्यालय 0721-2662108 शी संपर्क करा."},
+    {q:"ऑनलाईन नोंदणी कशी करावी?",a:"voters.eci.gov.in वेबसाईटवर किंवा Voter Helpline App द्वारे Form 6 भरता येतो. आधार क्रमांक व मोबाईल क्रमांक आवश्यक आहे."},
+    {q:"मतदार ओळखपत्र (EPIC) हरवल्यास काय करावे?",a:"voters.eci.gov.in वर e-EPIC डाउनलोड करता येते. किंवा BLO कडून duplicate EPIC साठी अर्ज करता येतो."},
+    {q:"Form 6, 7, 8 आणि 8A मध्ये काय फरक आहे?",a:"Form 6: नवीन मतदार नोंदणी | Form 7: नाव वगळण्यासाठी हरकत | Form 8: नाव/तपशील दुरुस्ती | Form 8A: त्याच मतदारसंघात पत्ता बदल"},
+    {q:"गणना फॉर्म भरण्यासाठी किती वेळ लागतो?",a:"साधारणतः 10-15 मिनिटे. घरातील सर्व सदस्यांचे नाव, वय, आधार क्रमांक व मोबाईल क्रमांक आधीच नोंदवून ठेवल्यास वेळ वाचतो."},
+  ],
+  en: [
+    {q:"What is SIR 2026?",a:"Special Intensive Revision (SIR) 2026 is a special drive by the Election Commission of India to update the electoral roll. It includes new voter registration, corrections, and deletion of deceased or relocated voters."},
+    {q:"Who is a BLO?",a:"BLO stands for Booth Level Officer — a government employee assigned to a specific polling booth area who visits homes to update the voter list."},
+    {q:"What is the minimum age for voter registration?",a:"You must be 18 years or older as of 1st January 2026 to be eligible for registration."},
+    {q:"What if the BLO doesn't visit my home?",a:"If the BLO does not visit within the scheduled time, contact the National Voter Helpline at 1950 or the District Election Office at 0721-2662108."},
+    {q:"How to register online?",a:"Visit voters.eci.gov.in or use the Voter Helpline App to fill Form 6 online. Your Aadhaar number and mobile number are required."},
+    {q:"What if I lose my Voter ID (EPIC)?",a:"You can download your e-EPIC from voters.eci.gov.in. You can also apply for a duplicate EPIC through your BLO."},
+    {q:"What's the difference between Form 6, 7, 8, and 8A?",a:"Form 6: New voter registration | Form 7: Objection for deletion | Form 8: Name/detail correction | Form 8A: Address change within same constituency"},
+    {q:"How long does it take to fill the enumeration form?",a:"About 10-15 minutes. Having all family members' names, ages, Aadhaar numbers, and mobile numbers ready will speed up the process."},
+  ]
+};
+
+function renderFAQ() {
+  const c = document.getElementById('faq-container');
+  c.innerHTML = FAQS[lang].map((f,i) => `
+    <div class="faq-item" id="fi${i}">
+      <button class="faq-question" onclick="toggleFAQ(${i})">
+        <span>${f.q}</span><span class="faq-arrow">▾</span>
+      </button>
+      <div class="faq-answer">${f.a}</div>
+    </div>`).join('');
+}
+
+function toggleFAQ(i) {
+  document.getElementById('fi'+i).classList.toggle('open');
+}
+
+// ─── AI CHAT ───
+const SYSTEM = `You are Amba Bhau (अंबा भाऊ), a warm, helpful, community-friendly local AI assistant for Amravati district, Maharashtra. You help citizens with Special Intensive Revision 2026 (SIR 2026) – voter list revision.
+
+Key topics you help with:
+- What is SIR 2026 and how it works in Amravati
+- Voter registration: new (Form 6), correction (Form 8), deletion (Form 7), address change (Form 8A)
+- BLO (Booth Level Officer) – what they do, how to find them
+- Document requirements for voter registration
+- How to fill the Household Enumeration Form given by BLO
+- Helplines: National Voter Helpline 1950, District Election Office Amravati 0721-2662108
+- Websites: voters.eci.gov.in, ceo.maharashtra.gov.in
+
+RULES:
+- Respond in the SAME language the user writes in (Marathi or English). If Marathi, use simple respectful Marathi.
+- Be warm, friendly, and patient — like a helpful neighbor (शेजारी).
+- Do NOT make up specific BLO officer names or contact numbers — tell users to use the BLO Finder on this website or call 1950.
+- Keep answers concise but complete. Use bullet points where helpful.
+- Always end with "– अंबा भाऊ 🪔" or "– Amba Bhau 🪔"`;
+
+let history = [];
+let busy = false;
+
+async function sendMsg() {
+  const inp = document.getElementById('chat-in');
+  const txt = inp.value.trim();
+  if (!txt || busy) return;
+  inp.value = '';
+  addBubble('user', txt);
+  history.push({role:'user', content:txt});
+  document.getElementById('qr-bar').style.display = 'none';
+  showTyping(); busy = true;
+  document.getElementById('send-btn').disabled = true;
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        model:'claude-sonnet-4-20250514',
+        max_tokens:1000,
+        system: SYSTEM,
+        messages: history
+      })
+    });
+    const data = await res.json();
+    const reply = data.content?.[0]?.text || (lang==='mr'?'माफ करा, उत्तर मिळाले नाही.':'Sorry, could not get a response.');
+    removeTyping();
+    addBubble('bot', reply);
+    history.push({role:'assistant', content:reply});
+  } catch(e) {
+    removeTyping();
+    addBubble('bot', lang==='mr'?'माफ करा, तांत्रिक अडचण आली. कृपया हेल्पलाईन 1950 वर संपर्क करा.':'Sorry, a technical error occurred. Please call Helpline 1950.');
+  }
+  busy = false;
+  document.getElementById('send-btn').disabled = false;
+}
+
+function quickAsk(btn) {
+  document.getElementById('chat-in').value = btn.textContent;
+  sendMsg();
+}
+
+function addBubble(role, text) {
+  const c = document.getElementById('chat-msgs');
+  const d = document.createElement('div');
+  d.className = 'msg ' + role;
+  d.innerHTML = `<div class="msg-avatar">${role==='bot'?'🪔':'👤'}</div><div class="msg-bubble">${text.replace(/\n/g,'<br>')}</div>`;
+  c.appendChild(d);
+  c.scrollTop = c.scrollHeight;
+}
+
+function showTyping() {
+  const c = document.getElementById('chat-msgs');
+  const d = document.createElement('div');
+  d.className = 'msg bot'; d.id = 'typing';
+  d.innerHTML = `<div class="msg-avatar">🪔</div><div class="msg-bubble"><div class="typing-dots"><span></span><span></span><span></span></div></div>`;
+  c.appendChild(d);
+  c.scrollTop = c.scrollHeight;
+}
+
+function removeTyping() { document.getElementById('typing')?.remove(); }
+
+// ─── INIT ───
+renderFAQ();
+</script>
+</body>
+</html>
